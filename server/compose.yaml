@@ -1,0 +1,18 @@
+services:
+  server:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000  
+      - DATABASE_URL=postgres://ucbs4q25doq1kc:p711976eadadeeb84502a01de5d718faa284216c57cd2a63441ab01a62f8d67c4@caij57unh724n3.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d3col305lcij06
+  db:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "123456"
+
